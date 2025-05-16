@@ -3,6 +3,10 @@ import prisma from "../prisma/client";
 import { IEmailPassword, IUsernamePassword, UserTokenType } from "../types/user.types";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import dotenv from "dotenv";
+
+dotenv.config();
+const secretKey: string = process.env.JWT_SECRET || "secret";
 
 
 export const loginUser: {
@@ -28,7 +32,7 @@ export const loginUser: {
         throw new AppError("Invalid credential account, wrong password", 401);
     }
 
-    const token = jwt.sign({ id: user.id, email: user.email }, "secret", {
+    const token = jwt.sign({ id: user.id, email: user.email }, secretKey, {
         expiresIn: "1h",
     });
 
