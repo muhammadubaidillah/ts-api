@@ -16,15 +16,23 @@ Simple REST API template using Express, TypeScript, Prisma ORM, and PostgreSQL.
 
 #### Production
 
-$ yarn install --prod
-# or
+``` bash
+$ yarn install --prod 
+```
+##### or
+``` bash
 $ npm i --prod
+```
 
 #### Development
 
+``` bash
 $ yarn install
-# or
+```
+##### or
+``` bash
 $ npm i
+```
 
 ## Configuration
 
@@ -43,31 +51,49 @@ Configuration for `.env` file:
 
 ### Generate Prisma Client
 
+``` bash
 $ npx prisma generate
+```
 
 ### Run Migration
 
+``` bash
 $ npx prisma migrate dev --name init
+```
 
-or for production:
+##### or for production:
 
+``` bash
 $ npx prisma migrate deploy
+```
 
 ## Runtime
 
 ### Production
 
+``` bash
 $ yarn build
 $ yarn start
-# or
+```
+
+##### or
+
+``` bash
 $ npm run build
 $ npm run start
+```
 
 ### Development
 
+``` bash
 $ yarn dev
-# or
+```
+
+##### or
+
+``` bash
 $ npm run dev
+```
 
 ## API Endpoints
 
@@ -79,6 +105,7 @@ $ npm run dev
 | POST    | /api/auth/login    | Login & get JWT token     |
 | GET     | /api/users         | Get list of users         |
 | GET     | /api/users/id      | Get detail of a user      |
+| GET     | /api/users/email   | Get detail of a user      |
 
 ## Testing
 
